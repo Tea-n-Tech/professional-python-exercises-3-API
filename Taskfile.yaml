@@ -1,0 +1,50 @@
+# https://taskfile.dev
+
+version: '3'
+
+tasks:
+
+  install:
+    desc: Installs the dependecies based on the poetry file
+    cmds:
+      - poetry install
+
+  lint:
+    desc: Runs formatting and linting
+    cmds:  
+      - poetry run black --check github_cli.py
+      - |
+        poetry run flake8 github_cli.py \
+          --show-source \
+          --statistics \
+          --count
+      - poetry run pylint github_cli.py
+   
+  build:
+    desc: Builds the puthon package
+    cmds:
+      - poetry build
+
+  test:
+    desc: Runs tests on the code
+    cmds:
+      - >
+        poetry run pytest
+        -s
+        --cov=.
+        --cov-report=html
+
+  stars:
+    cmds:
+      - poetry run python github_cli.py countstars
+    silent: false
+
+  status:
+    cmds:
+      - poetry run python github_cli.py setstatus
+    silent: false
+  
+  getdetails: 
+    cmds:
+      - poetry run python github_cli.py getdetails
+    silent: false
