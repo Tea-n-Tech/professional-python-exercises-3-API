@@ -15,21 +15,25 @@ class TestStarRater:
 
 
 class TestSetStatus:
+    @mock.patch("github_cli.get_github_token", autospec=True)
     @mock.patch("github_cli.requests.post", autospec=True)
-    def test_set_status_all_good(self, request_mock: mock.Mock):
+    def test_set_status_all_good(self, request_mock: mock.Mock, api_mock: mock.Mock):
+        api_mock.return_value = "0000000000000000000000000000000000000000"
         all_good_response = requests.Response()
         all_good_response.status_code = 200
-        request_mock.return_value = all_good_response
+        request_mock.return_value: requests.Response = all_good_response
         success = setstatus()
         assert request_mock.called
         assert success
 
+    @mock.patch("github_cli.get_github_token", autospec=True)
     @mock.patch("github_cli.requests.post", autospec=True)
-    def test_set_status_not_good(self, request_mock: mock.Mock):
+    def test_set_status_not_good(self, request_mock: mock.Mock, api_mock: mock.Mock):
+        api_mock.return_value = "0000000000000000000000000000000000000000"
         not_good_response = requests.Response()
         not_good_response.status_code = 401
-        request_mock.return_value = not_good_response
+        request_mock.return_value: requests.Response = not_good_response
         with suppress(Exception):
             success = setstatus()
-        assert request_mock.called
-        assert success is False
+            assert request_mock.called
+            assert success is False
