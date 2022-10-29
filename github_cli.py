@@ -4,7 +4,7 @@ import json
 from typing import Optional
 import dotenv
 from github import Github
-from github import NamedUser
+from github.NamedUser import NamedUser
 import typer
 import requests
 
@@ -22,7 +22,6 @@ def get_user_form_input() -> NamedUser:
     if name == "":
         typer.echo("Empty Value inputted, try again")
         sys.exit("Failed to get user input")
-    name = input("Enter user for star count: ")
     token = get_github_token()
     github_session = Github(token)
     if github_session.search_users(name).totalCount == 0:
@@ -58,7 +57,7 @@ def countstars(json_format: Optional[bool] = False) -> int:
         star_count += stars
     if json_format:
         output = {}
-        output["user"] = name
+        output["username"] = name
         output["stars"] = star_count
         print(json.dumps(output))
     else:
@@ -222,7 +221,5 @@ def get_github_token() -> str:
     return api_key
 
 
-# if __name__ == "__main__":
-#     app()
 if __name__ == "__main__":
     app()

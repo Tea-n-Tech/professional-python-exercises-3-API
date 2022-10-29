@@ -39,6 +39,11 @@ tasks:
       - poetry run python github_cli.py countstars
     silent: false
 
+  starsjson:
+    cmds:
+      - poetry run python github_cli.py countstars --json-format
+    silent: false
+
   status:
     cmds:
       - poetry run python github_cli.py setstatus
@@ -47,4 +52,9 @@ tasks:
   getdetails: 
     cmds:
       - poetry run python github_cli.py getdetails
+    silent: false
+  
+  getdetailsjson:
+    cmds:
+      - poetry run python github_cli.py getdetails --json-format
     silent: false
