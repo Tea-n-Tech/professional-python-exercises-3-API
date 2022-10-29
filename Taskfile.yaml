@@ -7,7 +7,7 @@ tasks:
   install:
     desc: Installs the dependecies based on the poetry file
     cmds:
-      - poetry install
+      - poetry install --no-root
 
   lint:
     desc: Runs formatting and linting
