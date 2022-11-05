@@ -40,5 +40,9 @@ disable = [
     "too-many-locals"
 ]
 
+[tool.pylint.basic]
+# Test files and classes don't need linting
+no-docstring-rgx="^(_|test_|Test)"
+
 [tool.black]
 line-length=100

@@ -1,17 +1,16 @@
 from contextlib import suppress
+from unittest import mock
 import requests
 from professional_python_exercises_2_githubcli.github_cli import _rate_stars_to_repos
 from professional_python_exercises_2_githubcli.github_cli import setstatus
-from unittest import mock
 
 
-class TestStarRater:
-    def test_ratings(self):
-        assert _rate_stars_to_repos(0, 10) == "This poor fellar. Work harder!"
-        assert _rate_stars_to_repos(0, 0) == "This poor fellar. Work harder!"
-        assert _rate_stars_to_repos(1, 10) == "Keep doing what you're doing. But do more!"
-        assert _rate_stars_to_repos(20, 10) == "Not bad ey, not bad."
-        assert _rate_stars_to_repos(2000, 10) == "Greetings, Mr. Starlord"
+def test_ratings():
+    assert _rate_stars_to_repos(0, 10) == "This poor fellar. Work harder!"
+    assert _rate_stars_to_repos(0, 0) == "This poor fellar. Work harder!"
+    assert _rate_stars_to_repos(1, 10) == "Keep doing what you're doing. But do more!"
+    assert _rate_stars_to_repos(20, 10) == "Not bad ey, not bad."
+    assert _rate_stars_to_repos(2000, 10) == "Greetings, Mr. Starlord"
 
 
 class TestSetStatus:

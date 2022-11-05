@@ -13,13 +13,13 @@ tasks:
   lint:
     desc: Runs formatting and linting
     cmds:  
-      - poetry run black --check professional_python_exercises_2_githubcli/github_cli.py
+      - poetry run black --check professional_python_exercises_2_githubcli
       - |
-        poetry run flake8 professional_python_exercises_2_githubcli/github_cli.py \
+        poetry run flake8 professional_python_exercises_2_githubcli \
           --show-source \
           --statistics \
           --count
-      - poetry run pylint professional_python_exercises_2_githubcli/github_cli.py
+      - poetry run pylint professional_python_exercises_2_githubcli
    
   build:
     desc: Builds the puthon package
@@ -61,7 +61,7 @@ tasks:
   docs-publish:
     desc: Publish the documentation to gh-pages
     cmds:
-      - poetry run gh-deploy --force
+      - poetry run mkdocs gh-deploy --force
 
   stars:
     desc: Get the number of stars of the given user's repositories
