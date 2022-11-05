@@ -45,7 +45,7 @@ jobs:
         run:
           ./bin/task test
 
-      test-publish:
+  test-publish:
     # Will run after the job 'tests'
     needs: [tests]
 
