@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://Tea-n-Tech.github.io/professional-python-exercises-2-githubCLI/sbom/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Sbom - GithubCLI</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="../assets/_mkdocstrings.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Sbom";
+        var mkdocs_page_input_path = "sbom.md";
+        var mkdocs_page_url = "/professional-python-exercises-2-githubCLI/sbom/";
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> GithubCLI
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../quick_start/">Quick-Start</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../faq/">FAQ</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../source_code/">Source Code</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../coverage/">Coverage report</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">GithubCLI</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+      <li>Sbom</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h3 id="3rd-party-licenses">3rd Party Licenses</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Version</th>
+<th>License(s)</th>
+<th>Type</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>astroid</td>
+<td>2.12.12</td>
+<td>unknown</td>
+<td>library</td>
+</tr>
+<tr>
+<td>attrs</td>
+<td>22.1.0</td>
+<td>unknown</td>
+<td>library</td>
+<td>https://pypi.org/project/attrs/22.1.0</td>
+</tr>
+<tr>
+<td>black</td>
+<td>22.10.0</td>
+<td>unknown</td>
+<td>library</td>
+<td>https://pypi.org/project/black/22.10.0</td>
+</tr>
+<tr>
+<td>certifi</td>
+<td>2022.9.24</td>
+<td>unknown</td>
+<td>library</td>
+<td>https://pypi.org/project/certifi/2022.9.24</td>
+</tr>
+<tr>
+<td>cffi</td>
+<td>1.15.1</td>
+<td>unknown</td>
+<td>library</td>
+<td>https://pypi.org/project/cffi/1.15.1</td>
+</tr>
+<tr>
+<td>charset-normalizer</td>
+<td>2.1.1</td>
+<td>unknown</td>
+<td>library</td>
+<td>https://pypi.org/project/charset-normalizer/2.1.1</td>
+</tr>
+<tr>
+<td>click</td>
+<td>8.1.3</td>
+<td>unknown</td>
+<td>library</td>
+<td>https://pypi.org/project/click/8.1.3</td>
+</tr>
+<tr>
+<td>colorama</td>
+<td>0.4.6</td>
+<td>unknown</td>
+<td>library</td>
+<td>https://pypi.org/project/colorama/0.4.6</td>
+</tr>
+<tr>
+<td>commonmark</td>
+<td>0.9.1</td>
+<td>unknown</td>
+<td>library</td>
+<td>https://pypi.org/project/commonmark/0.9.1</td>
+</tr>
+<tr>
+<td>coverage</td>
+<td>6.5.0</td>
+<td>unknown</td>
+<td>library</td>
+<td>https://pypi.org/project/coverage/6.5.0</td>
+</tr>
+<tr>
+<td>cyclonedx-bom</td>
+<td>3.6.3</td>
+<td>unknown</td>
+<td>library</td>
+<td>https://pypi.org/project/cyclonedx-bom/3.6.3</td>
+</tr>
+<tr>
+<td>cyclonedx-python-lib</td>
+<td>3.1.0</td>
+<td>unknown</td>
+<td>library</td>
+<td>https://pypi.org/project/cyclonedx-python-lib/3.1.0</td>
+</tr>
+<tr>
+<td>deprecated</td>
+<td>1.2.13</td>
+<td>unknown</td>
+<td>library</td>
+<td>https://pypi.org/project/deprecated/1.2.13</td>
+</tr>
+<tr>
+<td>dill</td>
+<td>0.3.6</td>
+<td>unknown</td>
+<td>library</td>
+<td>https://pypi.org/project/dill/0.3.6</td>
+</tr>
+<tr>
+<td>exceptiongroup</td>
+<td>1.0.1</td>
+<td>unknown</td>
+<td>library</td>
+<td>https://pypi.org/project/exceptiongroup/1.0.1</td>
+</tr>
+<tr>
+<td>flake8</td>
+<td>5.0.4</td>
+<td>unknown</td>
+<td>library</td>
+<td>https://pypi.org/project/flake8/5.0.4</td>
+</tr>
+<tr>
+<td>ghp-import</td>
+<td>2.1.0</td>
+<td>unknown</td>
+<td>library</td>
+<td>https://pypi.org/project/ghp-import/2.1.0</td>
+</tr>
+<tr>
+<td>griffe</td>
+<td>0.23.0</td>
+<td>unknown</td>
+<td>library</td>
+<td>https://pypi.org/project/griffe/0.23.0</td>
+</tr>
+<tr>
+<td>idna</td>
+<td>3.4</td>
+<td>unknown</td>
+<td>library</td>
+<td>https://pypi.org/project/idna/3.4</td>
+</tr>
+<tr>
+<td>importlib-metadata</td>
+<td>5.0.0</td>
+<td>unknown</td>
+<td>library</td>
+<td>https://pypi.org/project/importlib-metadata/5.0.0</td>
+</tr>
+<tr>
+<td>iniconfig</td>
+<td>1.1.1</td>
+<td>unknown</td>
+<td>library</td>
+<td>https://pypi.org/project/iniconfig/1.1.1</td>
+</tr>
+<tr>
+<td>isort</td>
+<td>5.10.1</td>
+<td>unknown</td>
+<td>library</td>
+<td>https://pypi.org/project/isort/5.10.1</td>
+</tr>
+<tr>
+<td>jinja2</td>
+<td>2.11.3</td>
+<td>unknown</td>
+<td>library</td>
+<td>https://pypi.org/project/jinja2/2.11.3</td>
+</tr>
+<tr>
+<td>lazy-object-proxy</td>
+<td>1.8.0</td>
+<td>unknown</td>
+<td>library</td>
+<td>https://pypi.org/project/lazy-object-proxy/1.8.0</td>
+</tr>
+<tr>
+<td>markdown</td>
+<td>3.3.7</td>
+<td>unknown</td>
+<td>library</td>
+<td>https://pypi.org/project/markdown/3.3.7</td>
+</tr>
+<tr>
+<td>markupsafe</td>
+<td>2.0.1</td>
+<td>unknown</td>
+<td>library</td>
+<td>https://pypi.org/project/markupsafe/2.0.1</td>
+</tr>
+<tr>
+<td>mccabe</td>
+<td>0.7.0</td>
+<td>unknown</td>
+<td>library</td>
+<td>https://pypi.org/project/mccabe/0.7.0</td>
+</tr>
+<tr>
+<td>mdbom</td>
+<td>0.3.0</td>
+<td>unknown</td>
+<td>library</td>
+<td>https://pypi.org/project/mdbom/0.3.0</td>
+</tr>
+<tr>
+<td>mergedeep</td>
+<td>1.3.4</td>
+<td>unknown</td>
+<td>library</td>
+<td>https://pypi.org/project/mergedeep/1.3.4</td>
+</tr>
+<tr>
+<td>mkdocs</td>
+<td>1.4.2</td>
+<td>unknown</td>
+<td>library</td>
+<td>https://pypi.org/project/mkdocs/1.4.2</td>
+</tr>
+<tr>
+<td>mkdocs-autorefs</td>
+<td>0.4.1</td>
+<td>unknown</td>
+<td>library</td>
+<td>https://pypi.org/project/mkdocs-autorefs/0.4.1</td>
+</tr>
+<tr>
+<td>mkdocs-coverage</td>
+<td>0.2.5</td>
+<td>unknown</td>
+<td>library</td>
+<td>https://pypi.org/project/mkdocs-coverage/0.2.5</td>
+</tr>
+<tr>
+<td>mkdocstrings</td>
+<td>0.19.0</td>
+<td>unknown</td>
+<td>library</td>
+<td>https://pypi.org/project/mkdocstrings/0.19.0</td>
+</tr>
+<tr>
+<td>mkdocstrings-python</td>
+<td>0.7.1</td>
+<td>unknown</td>
+<td>library</td>
+<td>https://pypi.org/project/mkdocstrings-python/0.7.1</td>
+</tr>
+<tr>
+<td>mypy-extensions</td>
+<td>0.4.3</td>
+<td>unknown</td>
+<td>library</td>
+<td>https://pypi.org/project/mypy-extensions/0.4.3</td>
+</tr>
+<tr>
+<td>packageurl-python</td>
+<td>0.10.4</td>
+<td>unknown</td>
+<td>library</td>
+<td>https://pypi.org/project/packageurl-python/0.10.4</td>
+</tr>
+<tr>
+<td>packaging</td>
+<td>21.3</td>
+<td>unknown</td>
+<td>library</td>
+<td>https://pypi.org/project/packaging/21.3</td>
+</tr>
+<tr>
+<td>pathspec</td>
+<td>0.10.1</td>
+<td>unknown</td>
+<td>library</td>
+<td>https://pypi.org/project/pathspec/0.10.1</td>
+</tr>
+<tr>
+<td>pip-requirements-parser</td>
+<td>31.2.0</td>
+<td>unknown</td>
+<td>library</td>
+<td>https://pypi.org/project/pip-requirements-parser/31.2.0</td>
+</tr>
+<tr>
+<td>platformdirs</td>
+<td>2.5.2</td>
+<td>unknown</td>
+<td>library</td>
+<td>https://pypi.org/project/platformdirs/2.5.2</td>
+</tr>
+<tr>
+<td>pluggy</td>
+<td>1.0.0</td>
+<td>unknown</td>
+<td>library</td>
+<td>https://pypi.org/project/pluggy/1.0.0</td>
+</tr>
+<tr>
+<td>pycodestyle</td>
+<td>2.9.1</td>
+<td>unknown</td>
+<td>library</td>
+<td>https://pypi.org/project/pycodestyle/2.9.1</td>
+</tr>
+<tr>
+<td>pycparser</td>
+<td>2.21</td>
+<td>unknown</td>
+<td>library</td>
+<td>https://pypi.org/project/pycparser/2.21</td>
+</tr>
+<tr>
+<td>pyflakes</td>
+<td>2.5.0</td>
+<td>unknown</td>
+<td>library</td>
+<td>https://pypi.org/project/pyflakes/2.5.0</td>
+</tr>
+<tr>
+<td>pygithub</td>
+<td>1.57</td>
+<td>unknown</td>
+<td>library</td>
+<td>https://pypi.org/project/pygithub/1.57</td>
+</tr>
+<tr>
+<td>pygments</td>
+<td>2.13.0</td>
+<td>unknown</td>
+<td>library</td>
+<td>https://pypi.org/project/pygments/2.13.0</td>
+</tr>
+<tr>
+<td>pyjwt</td>
+<td>2.6.0</td>
+<td>unknown</td>
+<td>library</td>
+<td>https://pypi.org/project/pyjwt/2.6.0</td>
+</tr>
+<tr>
+<td>pylint</td>
+<td>2.15.5</td>
+<td>unknown</td>
+<td>library</td>
+<td>https://pypi.org/project/pylint/2.15.5</td>
+</tr>
+<tr>
+<td>pymdown-extensions</td>
+<td>9.7</td>
+<td>unknown</td>
+<td>library</td>
+<td>https://pypi.org/project/pymdown-extensions/9.7</td>
+</tr>
+<tr>
+<td>pynacl</td>
+<td>1.5.0</td>
+<td>unknown</td>
+<td>library</td>
+<td>https://pypi.org/project/pynacl/1.5.0</td>
+</tr>
+<tr>
+<td>pyparsing</td>
+<td>3.0.9</td>
+<td>unknown</td>
+<td>library</td>
+<td>https://pypi.org/project/pyparsing/3.0.9</td>
+</tr>
+<tr>
+<td>pytest</td>
+<td>7.2.0</td>
+<td>unknown</td>
+<td>library</td>
+<td>https://pypi.org/project/pytest/7.2.0</td>
+</tr>
+<tr>
+<td>pytest-cov</td>
+<td>4.0.0</td>
+<td>unknown</td>
+<td>library</td>
+<td>https://pypi.org/project/pytest-cov/4.0.0</td>
+</tr>
+<tr>
+<td>python-dateutil</td>
+<td>2.8.2</td>
+<td>unknown</td>
+<td>library</td>
+<td>https://pypi.org/project/python-dateutil/2.8.2</td>
+</tr>
+<tr>
+<td>python-dotenv</td>
+<td>0.21.0</td>
+<td>unknown</td>
+<td>library</td>
+<td>https://pypi.org/project/python-dotenv/0.21.0</td>
+</tr>
+<tr>
+<td>pyyaml</td>
+<td>6.0</td>
+<td>unknown</td>
+<td>library</td>
+<td>https://pypi.org/project/pyyaml/6.0</td>
+</tr>
+<tr>
+<td>pyyaml-env-tag</td>
+<td>0.1</td>
+<td>unknown</td>
+<td>library</td>
+<td>https://pypi.org/project/pyyaml-env-tag/0.1</td>
+</tr>
+<tr>
+<td>requests</td>
+<td>2.28.1</td>
+<td>unknown</td>
+<td>library</td>
+<td>https://pypi.org/project/requests/2.28.1</td>
+</tr>
+<tr>
+<td>rich</td>
+<td>12.6.0</td>
+<td>unknown</td>
+<td>library</td>
+<td>https://pypi.org/project/rich/12.6.0</td>
+</tr>
+<tr>
+<td>setuptools</td>
+<td>65.5.1</td>
+<td>unknown</td>
+<td>library</td>
+<td>https://pypi.org/project/setuptools/65.5.1</td>
+</tr>
+<tr>
+<td>six</td>
+<td>1.16.0</td>
+<td>unknown</td>
+<td>library</td>
+<td>https://pypi.org/project/six/1.16.0</td>
+</tr>
+<tr>
+<td>sortedcontainers</td>
+<td>2.4.0</td>
+<td>unknown</td>
+<td>library</td>
+<td>https://pypi.org/project/sortedcontainers/2.4.0</td>
+</tr>
+<tr>
+<td>toml</td>
+<td>0.10.2</td>
+<td>unknown</td>
+<td>library</td>
+<td>https://pypi.org/project/toml/0.10.2</td>
+</tr>
+<tr>
+<td>tomli</td>
+<td>2.0.1</td>
+<td>unknown</td>
+<td>library</td>
+<td>https://pypi.org/project/tomli/2.0.1</td>
+</tr>
+<tr>
+<td>tomlkit</td>
+<td>0.11.6</td>
+<td>unknown</td>
+<td>library</td>
+<td>https://pypi.org/project/tomlkit/0.11.6</td>
+</tr>
+<tr>
+<td>typer</td>
+<td>0.6.1</td>
+<td>unknown</td>
+<td>library</td>
+<td>https://pypi.org/project/typer/0.6.1</td>
+</tr>
+<tr>
+<td>typing-extensions</td>
+<td>4.4.0</td>
+<td>unknown</td>
+<td>library</td>
+<td>https://pypi.org/project/typing-extensions/4.4.0</td>
+</tr>
+<tr>
+<td>urllib3</td>
+<td>1.26.12</td>
+<td>unknown</td>
+<td>library</td>
+<td>https://pypi.org/project/urllib3/1.26.12</td>
+</tr>
+<tr>
+<td>watchdog</td>
+<td>2.1.9</td>
+<td>unknown</td>
+<td>library</td>
+<td>https://pypi.org/project/watchdog/2.1.9</td>
+</tr>
+<tr>
+<td>wrapt</td>
+<td>1.14.1</td>
+<td>unknown</td>
+<td>library</td>
+<td>https://pypi.org/project/wrapt/1.14.1</td>
+</tr>
+<tr>
+<td>zipp</td>
+<td>3.10.0</td>
+<td>unknown</td>
+<td>library</td>
+<td>https://pypi.org/project/zipp/3.10.0</td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
