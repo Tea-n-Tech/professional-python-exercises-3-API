@@ -51,7 +51,7 @@ jobs:
 
     # Important, this job will run only if we tag the source
     # code with `git tag -a X.X.X`.
-    # if: startsWith(github.ref, 'refs/tags/')
+    if: startsWith(github.ref, 'refs/tags/')
     runs-on: ubuntu-latest
 
     # Jobs can have outputs for reuse. We want to reuse
@@ -109,7 +109,7 @@ jobs:
   test-install:
     needs: [test-publish]
     
-    # if: startsWith(github.ref, 'refs/tags/')
+    if: startsWith(github.ref, 'refs/tags/')
     runs-on: ubuntu-latest
 
     env:
@@ -131,7 +131,7 @@ jobs:
   
   publish:
     needs: [test-install]
-    # if: startsWith(github.ref, 'refs/tags/')
+    if: startsWith(github.ref, 'refs/tags/')
     runs-on: ubuntu-latest
 
     steps:
@@ -178,3 +178,7 @@ jobs:
           TWINE_NON_INTERACTIVE: 1
           TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
         run: poetry run twine upload --skip-existing --verbose 'dist/*'
+
+      # Upload documentation to gh-pages
+      - name: Upload docs to the gh-pages branch
+        run: task docs-publish
