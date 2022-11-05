@@ -15,8 +15,10 @@ class TestStarRater:
 
 
 class TestSetStatus:
-    @mock.patch("github_cli.get_github_token", autospec=True)
-    @mock.patch("github_cli.requests.post", autospec=True)
+    @mock.patch(
+        "professional_python_exercises_2_githubcli.github_cli.get_github_token", autospec=True
+    )
+    @mock.patch("professional_python_exercises_2_githubcli.github_cli.requests.post", autospec=True)
     def test_set_status_all_good(self, request_mock: mock.Mock, api_mock: mock.Mock):
         api_mock.return_value = "0000000000000000000000000000000000000000"
         all_good_response = requests.Response()
@@ -26,8 +28,10 @@ class TestSetStatus:
         assert request_mock.called
         assert success
 
-    @mock.patch("github_cli.get_github_token", autospec=True)
-    @mock.patch("github_cli.requests.post", autospec=True)
+    @mock.patch(
+        "professional_python_exercises_2_githubcli.github_cli.get_github_token", autospec=True
+    )
+    @mock.patch("professional_python_exercises_2_githubcli.github_cli.requests.post", autospec=True)
     def test_set_status_not_good(self, request_mock: mock.Mock, api_mock: mock.Mock):
         api_mock.return_value = "0000000000000000000000000000000000000000"
         not_good_response = requests.Response()
