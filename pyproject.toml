@@ -26,6 +26,7 @@ mkdocs-coverage = "^0.2.5"
 cyclonedx-bom = "^3.6.3"
 mdbom = "^0.3.0"
 pre-commit = "^2.20.0"
+twine = "^4.0.1"
 
 [build-system]
 requires = ["poetry-core"]
