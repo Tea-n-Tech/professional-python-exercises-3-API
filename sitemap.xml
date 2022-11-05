@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://tea-n-tech.github.io/professional-python-exercises-2-githubCLI/</loc>
+         <loc>https://tea-n-tech.github.io/professional-python-exercises-2-githubCLI/tas/</loc>
          <lastmod>2022-11-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tea-n-tech.github.io/professional-python-exercises-2-githubCLI/faq/</loc>
+         <loc>https://tea-n-tech.github.io/professional-python-exercises-2-githubCLI/tas/faq/</loc>
          <lastmod>2022-11-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tea-n-tech.github.io/professional-python-exercises-2-githubCLI/quick_start/</loc>
+         <loc>https://tea-n-tech.github.io/professional-python-exercises-2-githubCLI/tas/quick_start/</loc>
          <lastmod>2022-11-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tea-n-tech.github.io/professional-python-exercises-2-githubCLI/sbom/</loc>
+         <loc>https://tea-n-tech.github.io/professional-python-exercises-2-githubCLI/tas/sbom/</loc>
          <lastmod>2022-11-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tea-n-tech.github.io/professional-python-exercises-2-githubCLI/source_code/</loc>
+         <loc>https://tea-n-tech.github.io/professional-python-exercises-2-githubCLI/tas/source_code/</loc>
          <lastmod>2022-11-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://tea-n-tech.github.io/professional-python-exercises-2-githubCLI/coverage/</loc>
+         <loc>https://tea-n-tech.github.io/professional-python-exercises-2-githubCLI/tas/coverage/</loc>
          <lastmod>2022-11-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
