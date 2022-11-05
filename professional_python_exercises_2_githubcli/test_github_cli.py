@@ -1,7 +1,7 @@
 from contextlib import suppress
 import requests
-from github_cli import _rate_stars_to_repos
-from github_cli import setstatus
+from professional_python_exercises_2_githubcli.github_cli import _rate_stars_to_repos
+from professional_python_exercises_2_githubcli.github_cli import setstatus
 from unittest import mock
 
 

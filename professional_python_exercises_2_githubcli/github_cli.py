@@ -39,8 +39,6 @@ def countstars(json_format: Optional[bool] = False) -> int:
     Parameters:
     json_format : Optional[bool] = False
       decides wether json or plain text format is required
-    silent: Optional[bool] = True
-      decides wether console output is prevented
 
     Returns:
     starCount : int
