@@ -46,7 +46,6 @@ def countstars(json_format: Optional[bool] = False) -> int:
     """
     typer.echo("Enter user to count stars for.")
     user = get_user_form_input()
-    name = user.name
 
     repositories = user.get_repos()
     star_count = 0
@@ -55,11 +54,13 @@ def countstars(json_format: Optional[bool] = False) -> int:
         star_count += stars
     if json_format:
         output = {}
-        output["username"] = name
+        output["username"] = user.login
         output["stars"] = star_count
         print(json.dumps(output))
     else:
-        typer.echo(f"User: {name} has {star_count}⭐ in {repositories.totalCount} repositories.")
+        typer.echo(
+            f"User: {user.login} has {star_count}⭐ in {repositories.totalCount} repositories."
+        )
         typer.echo(_rate_stars_to_repos(star_count, repositories.totalCount))
     return star_count
 
@@ -194,8 +195,8 @@ def get_github_token() -> str:
         with open(os.getcwd() + "\\.env", mode="w", encoding="utf-8").close():
             pass
         dotenv_file = dotenv.find_dotenv()
-    dotenv.load_dotenv(dotenv_file)
 
+    dotenv.load_dotenv(dotenv_file)
     if "TNT_EX2_GITHUB_TOKEN" not in os.environ:
         print(
             "No API Key found in your environment variables. \nPlease look at "
@@ -215,6 +216,7 @@ def get_github_token() -> str:
         os.environ["TNT_EX2_GITHUB_TOKEN"] = input("Please enter your API Key now:\n-->").strip()
         return get_github_token()
 
+    dotenv.load_dotenv(dotenv_file)
     dotenv.set_key(dotenv_file, "TNT_EX2_GITHUB_TOKEN", api_key)  # save the API key to .env file
     return api_key
 
