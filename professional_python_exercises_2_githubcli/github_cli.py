@@ -20,7 +20,10 @@ def get_user_form_input() -> NamedUser:
     """
     name = input("User: ")
     if name == "":
-        typer.echo("Empty Value inputted, try again")
+        typer.echo("Empty name inputted, try again")
+        sys.exit("Failed to get user input")
+    if len(name) < 4:
+        typer.echo("Too short name inputted, try again")
         sys.exit("Failed to get user input")
     token = get_github_token()
     github_session = Github(token)
@@ -192,8 +195,8 @@ def get_github_token() -> str:
 
     dotenv_file = dotenv.find_dotenv()
     if dotenv_file == "":
-        with open(os.getcwd() + "\\.env", mode="w", encoding="utf-8").close():
-            pass
+        with open(os.getcwd() + "\\.env", mode="w", encoding="utf-8"):
+            typer.echo("Creating new .env File")
         dotenv_file = dotenv.find_dotenv()
 
     dotenv.load_dotenv(dotenv_file)
@@ -216,7 +219,6 @@ def get_github_token() -> str:
         os.environ["TNT_EX2_GITHUB_TOKEN"] = input("Please enter your API Key now:\n-->").strip()
         return get_github_token()
 
-    dotenv.load_dotenv(dotenv_file)
     dotenv.set_key(dotenv_file, "TNT_EX2_GITHUB_TOKEN", api_key)  # save the API key to .env file
     return api_key
 
