@@ -26,8 +26,7 @@ Focus points:
 ### Installing
 
 This repository uses poetry to install the dependencies and taskfile to execute the most basic functionality. 
-After having installed taskfile onto your system you can simply use ```task install``` to install the necessary dependendcies into a virtual environment. 4
-Besides the dependencies you will need a GitHub Access Token to use this program. Get it [here]("https://github.com/settings/tokens).
+After having installed taskfile onto your system you can simply use ```task install``` to install the necessary dependendcies into a virtual environment. Besides the dependencies you will need a GitHub Access Token to use this program. Get it [here]("https://github.com/settings/tokens).
 
 ### Usage
 
@@ -55,3 +54,5 @@ The other way of using this tool is directly with calling etiher poetry or nativ
 ```bash
 poetry run python professional_python_exercises_2_githubcli/github_cli.py setstatus
 ```
+
+Find the documentation [here](https://tea-n-tech.github.io/professional-python-exercises-2-githubCLI)
