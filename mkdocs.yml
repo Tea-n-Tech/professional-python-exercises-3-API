@@ -1,0 +1,20 @@
+# Some general page information
+site_name: GithubCLI
+site_url: https://tea-n-tech.github.io/professional-python-exercises-2-githubCLI/tas
+
+# We want to use the material theme
+theme:
+  name: readthedocs
+
+# The pages which you want to add
+nav:
+  - Home: index.md
+  - Quick-Start: quick_start.md
+  - FAQ: faq.md
+  - Source Code: source_code.md
+  - Coverage report: coverage.md
+
+plugins:
+  - search
+  - mkdocstrings
+  - coverage

@@ -1,0 +1,49 @@
+[tool.poetry]
+name = "professional-python-exercises-2-githubcli"
+version = "0.1.0alpha"
+description = "Command Line Interface for GitHub as part of the professional python course"
+authors = ["Manuel Ramsaier <manuel.ramsaier89@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "professional_python_exercises_2_githubcli"}]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+rich = "^12.6.0"
+typer = "^0.6.1"
+python-dotenv = "^0.21.0"
+requests = "^2.28.1"
+pygithub = "^1.56"
+
+[tool.poetry.group.dev.dependencies]
+pylint = "^2.15.5"
+flake8 = "^5.0.4"
+black = "^22.10.0"
+pytest-cov = "^4.0.0"
+mkdocs = "^1.4.2"
+mkdocstrings = {extras = ["python"], version = "^0.19.0"}
+mkdocs-coverage = "^0.2.5"
+cyclonedx-bom = "^3.6.3"
+mdbom = "^0.3.0"
+pre-commit = "^2.20.0"
+twine = "^4.0.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pylint."MESSAGES CONTROL"]
+disable = [
+    # Disable missing module docstring since the information
+    # regarding functionality is provided with more than enough
+    # detail by the functions themselves
+    "missing-module-docstring",
+    "too-many-locals"
+]
+
+[tool.pylint.basic]
+# Test files and classes don't need linting
+no-docstring-rgx="^(_|test_|Test)"
+
+[tool.black]
+line-length=100
