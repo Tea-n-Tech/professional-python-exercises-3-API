@@ -1,9 +1,8 @@
 # https://taskfile.dev
 
-version: '3'
+version: "3"
 
 tasks:
-
   install:
     desc: Installs the dependecies based on the poetry file
     cmds:
@@ -11,7 +10,7 @@ tasks:
 
   lint:
     desc: Runs formatting and linting
-    cmds:  
+    cmds:
       - poetry run black --check professional_python_exercises_2_githubcli
       - |
         poetry run flake8 professional_python_exercises_2_githubcli \
@@ -19,7 +18,7 @@ tasks:
           --statistics \
           --count
       - poetry run pylint professional_python_exercises_2_githubcli
-   
+
   build:
     desc: Builds the puthon package
     cmds:
@@ -51,7 +50,7 @@ tasks:
           --template docs/templates/sbom.md.jinja
         # Clean up
         rm -f sbom.json
-  
+
   docs-serve:
     desc: Serve the documentation locally
     cmds:
@@ -62,32 +61,7 @@ tasks:
     cmds:
       - poetry run mkdocs gh-deploy --force
 
-  stars:
-    desc: Get the number of stars of the given user's repositories
+  cli:
+    desc: Runs the cli. Use 'task cli -- ARG' to specify args.
     cmds:
-      - poetry run python professional_python_exercises_2_githubcli/github_cli.py countstars
-    silent: false
-
-  starsjson:
-    desc: Get the number of stars of the given user's repositories in json format
-    cmds:
-      - poetry run python professional_python_exercises_2_githubcli/github_cli.py countstars --json-format
-    silent: false
-
-  status:
-    desc: Set the status of your user to something delicous
-    cmds:
-      - poetry run python professional_python_exercises_2_githubcli/github_cli.py setstatus
-    silent: false
-  
-  getdetails: 
-    desc: Get details of a given user and print it to console
-    cmds:
-      - poetry run python professional_python_exercises_2_githubcli/github_cli.py getdetails
-    silent: false
-  
-  getdetailsjson:
-    desc: Get details of a given user in json
-    cmds:
-      - poetry run python professional_python_exercises_2_githubcli/github_cli.py getdetails --json-format
-    silent: false
+      - poetry run githubcli {{.CLI_ARGS}}
