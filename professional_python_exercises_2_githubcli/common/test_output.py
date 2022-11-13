@@ -11,7 +11,7 @@ class TestOutput(unittest.TestCase):
     def test_print_output_json(self, mock_print: Mock, mock_typer_echo: Mock, mock_sys_exit: Mock):
         msg = "yay"
 
-        print_output(msg, OutputFormat.json)
+        print_output(msg, OutputFormat.JSON)
 
         mock_print.assert_called_once_with(msg)
         mock_typer_echo.assert_not_called()
@@ -23,7 +23,7 @@ class TestOutput(unittest.TestCase):
     def test_print_output_text(self, mock_print: Mock, mock_typer_echo: Mock, mock_sys_exit: Mock):
         msg = "yay"
 
-        print_output(msg, OutputFormat.text)
+        print_output(msg, OutputFormat.TEXT)
 
         mock_print.assert_not_called()
         mock_typer_echo.assert_called_once_with(msg)

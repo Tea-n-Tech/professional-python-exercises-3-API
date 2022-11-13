@@ -1,9 +1,9 @@
 import unittest
-from unittest.mock import patch, Mock
+from datetime import datetime
+from unittest.mock import Mock, patch
 
 from ..common.output import OutputFormat
 from .user_details import UserDetails
-from datetime import datetime
 
 _example_user_details = UserDetails(
     username="username",
@@ -30,13 +30,13 @@ _example_user_details = UserDetails(
 class TestUserDetails(unittest.TestCase):
     @patch("professional_python_exercises_2_githubcli.api.user_details.typer.echo", autospec=True)
     def test_format_output_text(self, mock_typer_echo: Mock):
-        output = _example_user_details.format_output(OutputFormat.text)
+        output = _example_user_details.format_output(OutputFormat.TEXT)
         assert output.startswith("Details about user")
         mock_typer_echo.assert_not_called()
 
     @patch("professional_python_exercises_2_githubcli.api.user_details.typer.echo", autospec=True)
     def test_format_output_json(self, mock_typer_echo: Mock):
-        output = _example_user_details.format_output(OutputFormat.json)
+        output = _example_user_details.format_output(OutputFormat.JSON)
         assert output.startswith("{")
         mock_typer_echo.assert_not_called()
 

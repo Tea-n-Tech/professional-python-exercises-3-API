@@ -11,7 +11,7 @@ stars_cmd = typer.Typer(name="stars", invoke_without_command=True)
 def stars(
     user="",
     # pylint: disable=redefined-builtin
-    format: OutputFormat = OutputFormat.text,
+    format: OutputFormat = OutputFormat.TEXT,
 ):
     """
     Counts the stars of a specified user and gives a nice comment to the user

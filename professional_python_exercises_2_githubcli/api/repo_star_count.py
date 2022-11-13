@@ -36,14 +36,26 @@ class RepoStarCount:
     star_count: int
     repo_count: int
 
-    def format_output(self, format: OutputFormat) -> str:
-        if format == OutputFormat.json:
+    def format_output(
+        self,
+        # pylint: disable=redefined-builtin
+        format: OutputFormat,
+    ) -> str:
+        """Format the class for output
+
+        Args:
+            format: How to format the output
+
+        Returns:
+            Formatted string
+        """
+        if format == OutputFormat.JSON:
             output = {}
             output["username"] = self.username
             output["stars"] = self.star_count
             return json.dumps(output)
 
-        if format == OutputFormat.text:
+        if format == OutputFormat.TEXT:
             output = (
                 f"User '{self.username}' has {self.star_count}⭐ "
                 f"in {self.repo_count} repositories.\n"

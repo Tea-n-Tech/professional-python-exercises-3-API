@@ -85,6 +85,12 @@ class GitHubAPI:
         return details
 
     def set_status(self, emoji_name: str, message: str):
+        """Set the status message of the authenticated user
+
+        Args:
+            emoji_name: Emoji name as string such as ':tea:' for 🍵
+            message: Status message to display
+        """
         payload = {}
         payload[
             "query"

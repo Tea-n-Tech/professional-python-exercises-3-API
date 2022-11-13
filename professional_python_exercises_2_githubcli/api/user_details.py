@@ -9,6 +9,10 @@ from ..common.output import OutputFormat
 
 @dataclass
 class UserDetails:
+    """Class for storing details about a user"""
+
+    # We just wrap API output here which is very verbose
+    # pylint: disable=too-many-instance-attributes
     username: str
     bio: str
     blog: str
@@ -28,8 +32,20 @@ class UserDetails:
     follower_count: int
     following_count: int
 
-    def format_output(self, format: OutputFormat) -> str:
-        if format == OutputFormat.text:
+    def format_output(
+        self,
+        # pylint: disable=redefined-builtin
+        format: OutputFormat,
+    ) -> str:
+        """Format the class for output
+
+        Args:
+            format: How to format the output
+
+        Returns:
+            Formatted string
+        """
+        if format == OutputFormat.TEXT:
             output = "\n".join(
                 (
                     f"Details about user:{self.username}, created at {self.created}, "
@@ -47,7 +63,7 @@ class UserDetails:
             )
             return output
 
-        if format == OutputFormat.json:
+        if format == OutputFormat.JSON:
             return json.dumps(self.__dict__)
 
         typer.echo(f"Unknown output format '{format}'")

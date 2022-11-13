@@ -32,7 +32,7 @@ class TestUserCmd(unittest.TestCase):
         mock_api.get_authenticated_user.assert_called_once_with()
         mock_token_fn.assert_called_once_with()
         mock_api.user_details.assert_called_once_with(username)
-        user_details_mock.format_output.assert_called_once_with(format=OutputFormat.text)
+        user_details_mock.format_output.assert_called_once_with(format=OutputFormat.TEXT)
         # # We don't check the exact message as this is likely to change.
         mock_print_fn.assert_called_once()
 
@@ -58,6 +58,6 @@ class TestUserCmd(unittest.TestCase):
         mock_api.get_authenticated_user.assert_called_once_with()
         mock_token_fn.assert_called_once_with()
         mock_api.user_details.assert_called_once_with(username)
-        user_details_mock.format_output.assert_called_once_with(format=OutputFormat.json)
+        user_details_mock.format_output.assert_called_once_with(format=OutputFormat.JSON)
         # # We don't check the exact message as this is likely to change.
         mock_print_fn.assert_called_once()

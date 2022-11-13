@@ -11,7 +11,7 @@ user_cmd = typer.Typer(name="user", invoke_without_command=True)
 def user_cb(
     user="",
     # pylint: disable=redefined-builtin
-    format: OutputFormat = OutputFormat.text,
+    format: OutputFormat = OutputFormat.TEXT,
 ):
     """
     Gets the details for the authenticated user (default) or a specified user.
