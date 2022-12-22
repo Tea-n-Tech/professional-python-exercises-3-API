@@ -1,32 +1,42 @@
-# Exercise2: GitHub Command line interface (CLI)
+# Exercise3: API
 
 ## Purpose
 
-This is the second exercise for the professional python course. The purpose is to build a proper CLI using the github API.
-The task is (copied from the professional python course): 
+This is the third exercise for the professional python course. The purpose is to build an API for the GitHub CLI (from exercise 2).
+The inital state is a fork from the 2nd exercise (Solution from Codie)
 
-Create a python program to interact with GitHub and retrieve data.
-Add the following commands:
+## Task (copied from Tea-n-Tech)
 
-- Count all stars of all repos of yourself, a specified user or an organization.
-- Print out details about yourself, a user or organization.
-  Allow a nicely printed format as default and offer output as json too.
-- One of the following:
-  - (easy) Modify your user description by adding a tea emoji and a heart.
-  - (difficult) Set your user status (top-right when clicking on username)
-    to a tea emoji with the message "Drinking Tea".
+This task will be an advancement of the previous one by wrapping the
+functionality in an API.
+Create an API with the following routes:
 
-Focus points:
+- GET `/health/ping` to check if the API is up (can be unauthenticated)
+- Require a GitHub token as authentication header and use this token for
+  your API calls to GitHub within your API
+- GET `/user` to get details about the currently authenticated user
+- GET `/user/stars` to retrieve the amount of GitHub stars of all repos from the
+  authenticated user
+- GET `/user/status` to get the current status of the authenticated user (see
+  task 2)
+- POST `/user/status` to set the users status to drinking tea (see task 2)
+- GET `/users/{username}` to get data about the specified user
+- GET `/users/{username}/stars` to get the amount of total stars from all repos
+  of the specified user
 
-- End-users will use your program so focus on usability
-- Integrate previous lessons as much as it makes sense
+What is important?
+
+- Document your API endpoints (hint: if you do this right, it is done
+  automatically)
+- The API needs to be wrapped and published as a docker image
+- Add a task command to start the docker image (makes life easier)
+
 
 ## Quickstart
 
 ### Installing
 
-This repository uses poetry to install the dependencies and taskfile to execute the most basic functionality. 
-After having installed taskfile onto your system you can simply use ```task install``` to install the necessary dependendcies into a virtual environment. Besides the dependencies you will need a GitHub Access Token to use this program. Get it [here]("https://github.com/settings/tokens).
+TBD
 
 ### Usage
 
@@ -55,4 +65,4 @@ The other way of using this tool is directly with calling etiher poetry or nativ
 poetry run python professional_python_exercises_2_githubcli/github_cli.py setstatus
 ```
 
-Find the documentation [here](https://tea-n-tech.github.io/professional-python-exercises-2-githubCLI)
+Find the documentation TBD
