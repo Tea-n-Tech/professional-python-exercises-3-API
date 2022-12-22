@@ -1,0 +1,67 @@
+# https://taskfile.dev
+
+version: "3"
+
+tasks:
+  install:
+    desc: Installs the dependecies based on the poetry file
+    cmds:
+      - poetry install --no-root
+
+  lint:
+    desc: Runs formatting and linting
+    cmds:
+      - poetry run black --check professional_python_exercises_2_githubcli
+      - |
+        poetry run flake8 professional_python_exercises_2_githubcli \
+          --show-source \
+          --statistics \
+          --count
+      - poetry run pylint professional_python_exercises_2_githubcli
+
+  build:
+    desc: Builds the puthon package
+    cmds:
+      - poetry build
+
+  test:
+    desc: Runs tests on the code
+    cmds:
+      - >
+        poetry run pytest
+        --cov=professional_python_exercises_2_githubcli
+        --cov-report=html
+
+  sbom:
+    desc: Generate the Software Bill of Materials
+    cmds:
+      - |
+        # Make sure no file exists since cyclonedx-bom cannot overwrite
+        rm -f sbom.json
+        # Create the Software Bill of Materials as json
+        poetry run cyclonedx-bom \
+          --poetry \
+          --format json \
+          --output sbom.json
+        # Create the Software Bill of Materials as markdown
+        poetry run mdb generate \
+          --input sbom.json \
+          --output docs/sbom.md \
+          --template docs/templates/sbom.md.jinja
+        # Clean up
+        rm -f sbom.json
+
+  docs-serve:
+    desc: Serve the documentation locally
+    cmds:
+      - poetry run mkdocs serve
+
+  docs-publish:
+    desc: Publish the documentation to gh-pages
+    cmds:
+      - poetry run mkdocs gh-deploy --force
+
+  cli:
+    desc: Runs the cli. Use 'task cli -- ARG' to specify args.
+    cmds:
+      - poetry run githubcli {{.CLI_ARGS}}
