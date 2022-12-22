@@ -1,14 +1,14 @@
 [tool.poetry]
-name = "professional-python-exercises-2-githubcli"
+name = "professional-python-exercises-3-api"
 version = "0.1.0alpha"
 description = "Command Line Interface for GitHub as part of the professional python course"
 authors = ["Manuel Ramsaier <manuel.ramsaier89@gmail.com>"]
 license = "MIT"
 readme = "README.md"
-packages = [{include = "professional_python_exercises_2_githubcli"}]
+packages = [{include = "professional_python_exercises_3_api"}]
 
 [tool.poetry.scripts]
-githubcli = "professional_python_exercises_2_githubcli.cli.root:app"
+githubcli = "professional_python_exercises_3_api.cli.root:app"
 
 [tool.poetry.dependencies]
 python = "^3.8"

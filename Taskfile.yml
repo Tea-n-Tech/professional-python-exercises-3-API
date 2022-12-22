@@ -11,13 +11,13 @@ tasks:
   lint:
     desc: Runs formatting and linting
     cmds:
-      - poetry run black --check professional_python_exercises_2_githubcli
+      - poetry run black --check professional_python_exercises_3_api
       - |
-        poetry run flake8 professional_python_exercises_2_githubcli \
+        poetry run flake8 professional_python_exercises_3_api \
           --show-source \
           --statistics \
           --count
-      - poetry run pylint professional_python_exercises_2_githubcli
+      - poetry run pylint professional_python_exercises_3_api
 
   build:
     desc: Builds the puthon package
@@ -29,7 +29,7 @@ tasks:
     cmds:
       - >
         poetry run pytest
-        --cov=professional_python_exercises_2_githubcli
+        --cov=professional_python_exercises_3_api
         --cov-report=html
 
   sbom:
