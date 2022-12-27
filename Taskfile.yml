@@ -65,3 +65,8 @@ tasks:
     desc: Runs the cli. Use 'task cli -- ARG' to specify args.
     cmds:
       - poetry run githubcli {{.CLI_ARGS}}
+
+  api:
+    desc: Run the API server
+    cmds:
+      - poetry run githubcli api
