@@ -30,3 +30,17 @@ def clear_status():
 
     api.set_status("", "")
     typer.echo("Your status has been cleared 👍")
+
+
+@status_cmd.command(name="status")
+def get_status() -> dict:
+    """
+    Gets the status of the user
+    """
+    github_token = get_github_token()
+
+    api = GitHubAPI(github_token)
+
+    status = api.get_status()
+    typer.echo(status)
+    return status

@@ -33,3 +33,4 @@ def user_cb(
     user_details = api.user_details(username=user)
     output = user_details.format_output(format=format)
     print_output(obj=output, format=format)
+    return output

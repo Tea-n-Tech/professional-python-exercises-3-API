@@ -31,3 +31,4 @@ def stars(
     counter = api.count_repos_and_stars(user)
     output = counter.format_output(format)
     print_output(obj=output, format=format)
+    return output

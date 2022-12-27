@@ -52,7 +52,7 @@ task: Available tasks for this project:
 The other way of using this tool is directly with calling etiher poetry or native python to start on of the functions, like 
 
 ```bash
-poetry run python professional_python_exercises_2_githubcli/github_cli.py setstatus
+poetry run python professional_python_exercises_3_api/github_cli.py setstatus
 ```
 
 Find the documentation [here](https://tea-n-tech.github.io/professional-python-exercises-2-githubCLI)

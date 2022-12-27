@@ -120,3 +120,34 @@ class GitHubAPI:
             for msg_obj in response_body["errors"]:
                 typer.echo(f"{msg_obj['type']}: {msg_obj['message']}")
             sys.exit(1)
+
+    def get_status(self) -> dict:
+        """Get the status message of the authenticated user
+
+        Returns:
+            Status message of the authenticated user
+        """
+        payload = {}
+        payload[
+            "query"
+        ] = """
+        query {
+            viewer {
+                status {
+                    emoji
+                    message
+                }
+            }
+        }
+        """
+
+        headers = {"Authorization": f"token {get_github_token()}"}
+        response = requests.post(
+            "https://api.github.com/graphql", json=payload, headers=headers, timeout=30
+        )
+
+        if response.status_code != HTTPStatus.OK:
+            typer.echo(f"Query failed to run by returning code of {response.status_code}.")
+            sys.exit(1)
+
+        return {"status": response.json()["data"]["viewer"]["status"]["message"]}
