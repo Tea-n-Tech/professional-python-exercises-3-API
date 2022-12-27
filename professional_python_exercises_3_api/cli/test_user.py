@@ -10,9 +10,9 @@ runner = CliRunner()
 
 
 class TestUserCmd(unittest.TestCase):
-    @patch("professional_python_exercises_2_githubcli.cli.user.print_output", autospec=True)
-    @patch("professional_python_exercises_2_githubcli.cli.user.get_github_token", autospec=True)
-    @patch("professional_python_exercises_2_githubcli.cli.user.GitHubAPI", autospec=True)
+    @patch("professional_python_exercises_3_api.cli.user.print_output", autospec=True)
+    @patch("professional_python_exercises_3_api.cli.user.get_github_token", autospec=True)
+    @patch("professional_python_exercises_3_api.cli.user.GitHubAPI", autospec=True)
     def test_user(self, mock_api_cls: Mock, mock_token_fn: Mock, mock_print_fn: Mock):
         username = "login"
         token = "abc123"
@@ -36,9 +36,9 @@ class TestUserCmd(unittest.TestCase):
         # # We don't check the exact message as this is likely to change.
         mock_print_fn.assert_called_once()
 
-    @patch("professional_python_exercises_2_githubcli.cli.user.print_output", autospec=True)
-    @patch("professional_python_exercises_2_githubcli.cli.user.get_github_token", autospec=True)
-    @patch("professional_python_exercises_2_githubcli.cli.user.GitHubAPI", autospec=True)
+    @patch("professional_python_exercises_3_api.cli.user.print_output", autospec=True)
+    @patch("professional_python_exercises_3_api.cli.user.get_github_token", autospec=True)
+    @patch("professional_python_exercises_3_api.cli.user.GitHubAPI", autospec=True)
     def test_user_format_json(self, mock_api_cls: Mock, mock_token_fn: Mock, mock_print_fn: Mock):
         username = "login"
         token = "abc123"

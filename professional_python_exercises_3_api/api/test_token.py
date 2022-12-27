@@ -5,9 +5,9 @@ from .token import get_github_token, ENV_GITHUB_TOKEN
 
 
 class TestToken(unittest.TestCase):
-    @patch("professional_python_exercises_2_githubcli.api.token.typer.echo", autospec=True)
-    @patch("professional_python_exercises_2_githubcli.api.token.sys.exit")
-    @patch("professional_python_exercises_2_githubcli.api.token.os.getenv")
+    @patch("professional_python_exercises_3_api.api.token.typer.echo", autospec=True)
+    @patch("professional_python_exercises_3_api.api.token.sys.exit")
+    @patch("professional_python_exercises_3_api.api.token.os.getenv")
     def test_get_github_token_success(
         self, mock_os_getenv: Mock, mock_sys_exit: Mock, mock_typer_echo: Mock
     ):
@@ -21,9 +21,9 @@ class TestToken(unittest.TestCase):
         mock_typer_echo.assert_not_called()
         mock_sys_exit.assert_not_called()
 
-    @patch("professional_python_exercises_2_githubcli.api.token.typer.echo", autospec=True)
-    @patch("professional_python_exercises_2_githubcli.api.token.sys.exit")
-    @patch("professional_python_exercises_2_githubcli.api.token.os.getenv")
+    @patch("professional_python_exercises_3_api.api.token.typer.echo", autospec=True)
+    @patch("professional_python_exercises_3_api.api.token.sys.exit")
+    @patch("professional_python_exercises_3_api.api.token.os.getenv")
     def test_get_github_token_no_env_set(
         self, mock_os_getenv: Mock, mock_sys_exit: Mock, mock_typer_echo: Mock
     ):

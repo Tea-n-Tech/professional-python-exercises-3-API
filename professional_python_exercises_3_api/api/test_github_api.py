@@ -8,7 +8,7 @@ from .user_details import UserDetails
 
 
 class TestGitHubAPI(unittest.TestCase):
-    @patch("professional_python_exercises_2_githubcli.api.github_api.Github", autospec=True)
+    @patch("professional_python_exercises_3_api.api.github_api.Github", autospec=True)
     def test_construction(self, mock_gh_cls: Mock):
         token = "abc123"
 
@@ -19,7 +19,7 @@ class TestGitHubAPI(unittest.TestCase):
         assert instance.session == mock_gh
         mock_gh_cls.assert_called_once_with(token)
 
-    @patch("professional_python_exercises_2_githubcli.api.github_api.Github", autospec=True)
+    @patch("professional_python_exercises_3_api.api.github_api.Github", autospec=True)
     def test_get_authenticated_user(self, mock_gh_cls: Mock):
         token = "abc123"
         expected_username = "tony"
@@ -37,7 +37,7 @@ class TestGitHubAPI(unittest.TestCase):
         assert username == expected_username
         mock_gh.get_user.assert_called_once_with()
 
-    @patch("professional_python_exercises_2_githubcli.api.github_api.Github", autospec=True)
+    @patch("professional_python_exercises_3_api.api.github_api.Github", autospec=True)
     def test_count_repos_and_stars(self, mock_gh_cls: Mock):
         token = "abc123"
         expected_username = "tony"
@@ -63,9 +63,9 @@ class TestGitHubAPI(unittest.TestCase):
         mock_gh.get_user.assert_called_once_with(expected_username)
         fake_gh_user.get_repos.assert_called_once_with()
 
-    @patch("professional_python_exercises_2_githubcli.api.github_api.sys.exit")
-    @patch("professional_python_exercises_2_githubcli.api.github_api.typer.echo", autospec=True)
-    @patch("professional_python_exercises_2_githubcli.api.github_api.Github", autospec=True)
+    @patch("professional_python_exercises_3_api.api.github_api.sys.exit")
+    @patch("professional_python_exercises_3_api.api.github_api.typer.echo", autospec=True)
+    @patch("professional_python_exercises_3_api.api.github_api.Github", autospec=True)
     def test_user_details(self, mock_gh_cls: Mock, mock_typer_echo: Mock, mock_sys_exit: Mock):
         token = "abc123"
         expected_username = "tony"
@@ -147,12 +147,10 @@ class TestGitHubAPI(unittest.TestCase):
         fake_gh_user.get_followers.assert_called_once_with()
         fake_gh_user.get_following.assert_called_once_with()
 
-    @patch("professional_python_exercises_2_githubcli.api.github_api.sys.exit")
-    @patch("professional_python_exercises_2_githubcli.api.github_api.typer.echo", autospec=True)
-    @patch("professional_python_exercises_2_githubcli.api.github_api.requests", autospec=True)
-    @patch(
-        "professional_python_exercises_2_githubcli.api.github_api.get_github_token", autospec=True
-    )
+    @patch("professional_python_exercises_3_api.api.github_api.sys.exit")
+    @patch("professional_python_exercises_3_api.api.github_api.typer.echo", autospec=True)
+    @patch("professional_python_exercises_3_api.api.github_api.requests", autospec=True)
+    @patch("professional_python_exercises_3_api.api.github_api.get_github_token", autospec=True)
     def test_set_status_ok(
         self, mock_get_token: Mock, mock_requests: Mock, mock_typer_echo: Mock, mock_sys_exit: Mock
     ):
@@ -172,11 +170,9 @@ class TestGitHubAPI(unittest.TestCase):
         mock_typer_echo.assert_not_called()
         mock_sys_exit.assert_not_called()
 
-    @patch("professional_python_exercises_2_githubcli.api.github_api.typer.echo", autospec=True)
-    @patch("professional_python_exercises_2_githubcli.api.github_api.requests", autospec=True)
-    @patch(
-        "professional_python_exercises_2_githubcli.api.github_api.get_github_token", autospec=True
-    )
+    @patch("professional_python_exercises_3_api.api.github_api.typer.echo", autospec=True)
+    @patch("professional_python_exercises_3_api.api.github_api.requests", autospec=True)
+    @patch("professional_python_exercises_3_api.api.github_api.get_github_token", autospec=True)
     def test_set_status_request_error(
         self, mock_get_token: Mock, mock_requests: Mock, mock_typer_echo: Mock
     ):
@@ -197,11 +193,9 @@ class TestGitHubAPI(unittest.TestCase):
         fake_response.json.assert_not_called()
         mock_typer_echo.assert_called_once_with("Mutation failed to run by returning code of 403.")
 
-    @patch("professional_python_exercises_2_githubcli.api.github_api.typer.echo", autospec=True)
-    @patch("professional_python_exercises_2_githubcli.api.github_api.requests", autospec=True)
-    @patch(
-        "professional_python_exercises_2_githubcli.api.github_api.get_github_token", autospec=True
-    )
+    @patch("professional_python_exercises_3_api.api.github_api.typer.echo", autospec=True)
+    @patch("professional_python_exercises_3_api.api.github_api.requests", autospec=True)
+    @patch("professional_python_exercises_3_api.api.github_api.get_github_token", autospec=True)
     def test_set_status_request_format_error(
         self, mock_get_token: Mock, mock_requests: Mock, mock_typer_echo: Mock
     ):

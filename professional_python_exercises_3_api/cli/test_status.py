@@ -9,8 +9,8 @@ runner = CliRunner()
 
 
 class TestToken(unittest.TestCase):
-    @patch("professional_python_exercises_2_githubcli.cli.status.get_github_token", autospec=True)
-    @patch("professional_python_exercises_2_githubcli.cli.status.GitHubAPI", autospec=True)
+    @patch("professional_python_exercises_3_api.cli.status.get_github_token", autospec=True)
+    @patch("professional_python_exercises_3_api.cli.status.GitHubAPI", autospec=True)
     def test_status_tea(self, mock_api_cls: Mock, mock_token_fn: Mock):
         token = "abc123"
 
@@ -25,8 +25,8 @@ class TestToken(unittest.TestCase):
         mock_api_cls.assert_called_once_with(token)
         mock_api.set_status.assert_called_once_with(":tea:", "Drinking Tea")
 
-    @patch("professional_python_exercises_2_githubcli.cli.status.get_github_token", autospec=True)
-    @patch("professional_python_exercises_2_githubcli.cli.status.GitHubAPI", autospec=True)
+    @patch("professional_python_exercises_3_api.cli.status.get_github_token", autospec=True)
+    @patch("professional_python_exercises_3_api.cli.status.GitHubAPI", autospec=True)
     def test_status_clear(self, mock_api_cls: Mock, mock_token_fn: Mock):
         token = "abc123"
 
